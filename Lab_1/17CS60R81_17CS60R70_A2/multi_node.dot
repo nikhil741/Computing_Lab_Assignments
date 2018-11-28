@@ -1,0 +1,32 @@
+graph
+{
+	// creating an invisible node at pos (0,0)
+	inv_node [style=invis, pos="0,0!"]
+
+	// creating another invisible node at pos (1000,1000)
+	// this is done so that the entire plot can been seen
+	// otherwise the image size will vary everytime
+	inv_node_corner [style=invis, pos="1000,1000!"]
+
+	// these points togetther form the corners of a 1000 x 1000 plot
+	inv_node -- inv_node_corner [style = invis]
+
+	// created 3 nodes of a triangle
+	n1 [shape = point, pos="300,400!"]
+	n2 [shape = point, pos="400,300!"]
+	n3 [shape = point, pos="200,200!"]
+
+	// created another point
+	p1 [shape = point, pos="700,800!"]
+	p2 [shape = point, pos="800,500!"]
+	p3 [shape = point, pos="600,650!"]
+
+	// created 3 circles
+	c1 [shape = circle, pos = "300,300!", width = 1, fixedsize=true]
+	c2 [fillcolor=green, style = filled, shape = circle, pos = "300,700!", width = 3, fixedsize=true]
+	c3 [fillcolor=blue, style = filled, shape = circle, pos = "700,300!", width = 2, fixedsize=true]
+
+	// created neccessary connections between the nodes of each circle
+	n1 -- n2 -- n3 -- n1
+	p1 -- p2 -- p3 -- p1
+}

@@ -1,0 +1,1 @@
+python map1.py | sort | python reduce1.py | python reduce2.py

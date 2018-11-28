@@ -1,0 +1,60 @@
+1	17CS60D01	Menda Manmadha Rao
+2	17CS60D02	Arindam Sadhukhan
+3	17CS60D03	Rohit Sahay
+4	17CS60D04	Jai Bihari Mathur
+5	17CS60D05	Aparna Nair
+6	17CS60D06	Aditya Kotasthane
+7	17CS60D07	Puneet Singhal
+8	17CS60D08	Abinas Mohapatra
+9	17CS60R08	Vijay Bahadur Gautam
+10	17CS60R13	Nishant Pant
+11	17CS60R15	Sumit Verma
+12	17CS60R17	Titas Sarkar
+13	17CS60R18	Prabhat Kumar
+14	17CS60R19	Aniket Deroy
+15	17CS60R25	Bhanupriya Pegu
+16	17CS60R31	Anamitra Mani
+17	17CS60R33	Gangwal Shubham Santosh
+18	17CS60R35	Ashwin Sudhakar Bhoyar
+19	17CS60R37	Soma Kundu
+20	17CS60R39	Lal Sridhar Vaishnava
+21	17CS60R44	Prashant Chauhan
+22	17CS60R45	Singh Ashwin Dinesh
+23	17CS60R47	Shubham Yadav
+24	17CS60R48	Abhishek Prakash Singh
+25	17CS60R49	Mandela Mahato
+26	17CS60R51	Vikash Kumar Chaurasia
+27	17CS60R52	Avik  Pramanick
+28	17CS60R53	Akshay Patil
+29	17CS60R54	Vineet Apoorv Herenj
+30	17CS60R55	Rajesh Kumar Ranjan
+31	17CS60R57	Suyog Chadawar
+32	17CS60R58	Akhilesh Kumar Yadav
+33	17CS60R60	Gagan Sharma
+34	17CS60R61	Ravi Rohan
+35	17CS60R62	Sushma Kumari
+36	17CS60R63	Nikhil Kumar Singh
+37	17CS60R64	Ekka Laveen Mathias
+38	17CS60R65	Harish Yadav
+39	17CS60R66	Vinay Kumar Maurya
+40	17CS60R67	Shubham Patel
+41	17CS60R68	Ronit Nath
+42	17CS60R69	Umang Chaturvedi
+43	17CS60R70	Nikhil Agrawal
+44	17CS60R71	Chanderki Rakesh Kumar
+45	17CS60R72	Shah Smit Ketankumar
+46	17CS60R73	Ainuddin Khan
+47	17CS60R74	Bhiman Kumar Baghel
+48	17CS60R75	Nidhi Mulay
+49	17CS60R77	Jeffrey Jose
+50	17CS60R78	Apurv Jain
+51	17CS60R79	Sumanta Dey
+52	17CS60R80	Jagriti Jalal
+53	17CS60R81	Ashish Malgawa
+54	17CS60R82	Archie Mittal
+55	17CS60R83	Hussain Jagirdar
+56	17CS60R84	Shubham Modi
+57	17CS60R85	Ladani Ami Jamnadas
+58	17CS60R86	Sourojit Bhaduri
+59	17CS60S01	Nikhil Kishor Parmar
+60	17CS91P08	Soumi Das
