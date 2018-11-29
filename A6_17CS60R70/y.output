@@ -1,0 +1,662 @@
+State 14 conflicts: 7 shift/reduce
+State 16 conflicts: 2 shift/reduce
+State 17 conflicts: 2 shift/reduce
+State 18 conflicts: 2 shift/reduce
+State 19 conflicts: 2 shift/reduce
+State 20 conflicts: 2 shift/reduce
+State 26 conflicts: 2 shift/reduce, 6 reduce/reduce
+State 27 conflicts: 2 shift/reduce, 6 reduce/reduce
+State 28 conflicts: 2 shift/reduce, 8 reduce/reduce
+State 29 conflicts: 2 shift/reduce, 8 reduce/reduce
+State 30 conflicts: 2 shift/reduce, 8 reduce/reduce
+
+
+Grammar
+
+    0 $accept: S $end
+
+    1 S: S e '\n'
+    2  | S '\n'
+    3  | %empty
+
+    4 e: e e
+    5  | e e '^' e
+    6  | e e '*' e
+    7  | e e '/' e
+    8  | e e '+' e
+    9  | e e '-' e
+   10  | e '^' e
+   11  | e '*' e
+   12  | e '/' e
+   13  | e '+' e
+   14  | e '-' e
+   15  | '(' e ')'
+   16  | NUMBER
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'\n' (10) 1 2
+'(' (40) 15
+')' (41) 15
+'*' (42) 6 11
+'+' (43) 8 13
+'-' (45) 9 14
+'/' (47) 7 12
+'^' (94) 5 10
+error (256)
+NUMBER (258) 16
+
+
+Nonterminals, with rules where they appear
+
+$accept (12)
+    on left: 0
+S (13)
+    on left: 1 2 3, on right: 0 1 2
+e (14)
+    on left: 4 5 6 7 8 9 10 11 12 13 14 15 16, on right: 1 4 5 6 7
+    8 9 10 11 12 13 14 15
+
+
+State 0
+
+    0 $accept: . S $end
+
+    $default  reduce using rule 3 (S)
+
+    S  go to state 1
+
+
+State 1
+
+    0 $accept: S . $end
+    1 S: S . e '\n'
+    2  | S . '\n'
+
+    $end    shift, and go to state 2
+    NUMBER  shift, and go to state 3
+    '\n'    shift, and go to state 4
+    '('     shift, and go to state 5
+
+    e  go to state 6
+
+
+State 2
+
+    0 $accept: S $end .
+
+    $default  accept
+
+
+State 3
+
+   16 e: NUMBER .
+
+    $default  reduce using rule 16 (e)
+
+
+State 4
+
+    2 S: S '\n' .
+
+    $default  reduce using rule 2 (S)
+
+
+State 5
+
+   15 e: '(' . e ')'
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 7
+
+
+State 6
+
+    1 S: S e . '\n'
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '+'     shift, and go to state 8
+    '-'     shift, and go to state 9
+    '*'     shift, and go to state 10
+    '/'     shift, and go to state 11
+    '^'     shift, and go to state 12
+    '\n'    shift, and go to state 13
+    '('     shift, and go to state 5
+
+    e  go to state 14
+
+
+State 7
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+   15  | '(' e . ')'
+
+    NUMBER  shift, and go to state 3
+    '+'     shift, and go to state 8
+    '-'     shift, and go to state 9
+    '*'     shift, and go to state 10
+    '/'     shift, and go to state 11
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+    ')'     shift, and go to state 15
+
+    e  go to state 14
+
+
+State 8
+
+   13 e: e '+' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 16
+
+
+State 9
+
+   14 e: e '-' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 17
+
+
+State 10
+
+   11 e: e '*' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 18
+
+
+State 11
+
+   12 e: e '/' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 19
+
+
+State 12
+
+   10 e: e '^' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 20
+
+
+State 13
+
+    1 S: S e '\n' .
+
+    $default  reduce using rule 1 (S)
+
+
+State 14
+
+    4 e: e . e
+    4  | e e .
+    5  | e . e '^' e
+    5  | e e . '^' e
+    6  | e . e '*' e
+    6  | e e . '*' e
+    7  | e . e '/' e
+    7  | e e . '/' e
+    8  | e . e '+' e
+    8  | e e . '+' e
+    9  | e . e '-' e
+    9  | e e . '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '+'     shift, and go to state 21
+    '-'     shift, and go to state 22
+    '*'     shift, and go to state 23
+    '/'     shift, and go to state 24
+    '^'     shift, and go to state 25
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 4 (e)]
+    '+'       [reduce using rule 4 (e)]
+    '-'       [reduce using rule 4 (e)]
+    '*'       [reduce using rule 4 (e)]
+    '/'       [reduce using rule 4 (e)]
+    '^'       [reduce using rule 4 (e)]
+    '('       [reduce using rule 4 (e)]
+    $default  reduce using rule 4 (e)
+
+    e  go to state 14
+
+
+State 15
+
+   15 e: '(' e ')' .
+
+    $default  reduce using rule 15 (e)
+
+
+State 16
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   13  | e '+' e .
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '*'     shift, and go to state 10
+    '/'     shift, and go to state 11
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 13 (e)]
+    '('       [reduce using rule 13 (e)]
+    $default  reduce using rule 13 (e)
+
+    e  go to state 14
+
+
+State 17
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+   14  | e '-' e .
+
+    NUMBER  shift, and go to state 3
+    '*'     shift, and go to state 10
+    '/'     shift, and go to state 11
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 14 (e)]
+    '('       [reduce using rule 14 (e)]
+    $default  reduce using rule 14 (e)
+
+    e  go to state 14
+
+
+State 18
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   11  | e '*' e .
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 11 (e)]
+    '('       [reduce using rule 11 (e)]
+    $default  reduce using rule 11 (e)
+
+    e  go to state 14
+
+
+State 19
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   12  | e '/' e .
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 12 (e)]
+    '('       [reduce using rule 12 (e)]
+    $default  reduce using rule 12 (e)
+
+    e  go to state 14
+
+
+State 20
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   10  | e '^' e .
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 10 (e)]
+    '('       [reduce using rule 10 (e)]
+    $default  reduce using rule 10 (e)
+
+    e  go to state 14
+
+
+State 21
+
+    8 e: e e '+' . e
+   13  | e '+' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 26
+
+
+State 22
+
+    9 e: e e '-' . e
+   14  | e '-' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 27
+
+
+State 23
+
+    6 e: e e '*' . e
+   11  | e '*' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 28
+
+
+State 24
+
+    7 e: e e '/' . e
+   12  | e '/' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 29
+
+
+State 25
+
+    5 e: e e '^' . e
+   10  | e '^' . e
+
+    NUMBER  shift, and go to state 3
+    '('     shift, and go to state 5
+
+    e  go to state 30
+
+
+State 26
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    8  | e e '+' e .
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   13  | e '+' e .
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '*'     shift, and go to state 10
+    '/'     shift, and go to state 11
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 8 (e)]
+    NUMBER    [reduce using rule 13 (e)]
+    '+'       reduce using rule 8 (e)
+    '+'       [reduce using rule 13 (e)]
+    '-'       reduce using rule 8 (e)
+    '-'       [reduce using rule 13 (e)]
+    '\n'      reduce using rule 8 (e)
+    '\n'      [reduce using rule 13 (e)]
+    '('       [reduce using rule 8 (e)]
+    '('       [reduce using rule 13 (e)]
+    ')'       reduce using rule 8 (e)
+    ')'       [reduce using rule 13 (e)]
+    $default  reduce using rule 8 (e)
+
+    e  go to state 14
+
+
+State 27
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+    9  | e e '-' e .
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+   14  | e '-' e .
+
+    NUMBER  shift, and go to state 3
+    '*'     shift, and go to state 10
+    '/'     shift, and go to state 11
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 9 (e)]
+    NUMBER    [reduce using rule 14 (e)]
+    '+'       reduce using rule 9 (e)
+    '+'       [reduce using rule 14 (e)]
+    '-'       reduce using rule 9 (e)
+    '-'       [reduce using rule 14 (e)]
+    '\n'      reduce using rule 9 (e)
+    '\n'      [reduce using rule 14 (e)]
+    '('       [reduce using rule 9 (e)]
+    '('       [reduce using rule 14 (e)]
+    ')'       reduce using rule 9 (e)
+    ')'       [reduce using rule 14 (e)]
+    $default  reduce using rule 9 (e)
+
+    e  go to state 14
+
+
+State 28
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    6  | e e '*' e .
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   11  | e '*' e .
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 6 (e)]
+    NUMBER    [reduce using rule 11 (e)]
+    '+'       reduce using rule 6 (e)
+    '+'       [reduce using rule 11 (e)]
+    '-'       reduce using rule 6 (e)
+    '-'       [reduce using rule 11 (e)]
+    '*'       reduce using rule 6 (e)
+    '*'       [reduce using rule 11 (e)]
+    '/'       reduce using rule 6 (e)
+    '/'       [reduce using rule 11 (e)]
+    '\n'      reduce using rule 6 (e)
+    '\n'      [reduce using rule 11 (e)]
+    '('       [reduce using rule 6 (e)]
+    '('       [reduce using rule 11 (e)]
+    ')'       reduce using rule 6 (e)
+    ')'       [reduce using rule 11 (e)]
+    $default  reduce using rule 6 (e)
+
+    e  go to state 14
+
+
+State 29
+
+    4 e: e . e
+    5  | e . e '^' e
+    6  | e . e '*' e
+    7  | e . e '/' e
+    7  | e e '/' e .
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   11  | e . '*' e
+   12  | e . '/' e
+   12  | e '/' e .
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 7 (e)]
+    NUMBER    [reduce using rule 12 (e)]
+    '+'       reduce using rule 7 (e)
+    '+'       [reduce using rule 12 (e)]
+    '-'       reduce using rule 7 (e)
+    '-'       [reduce using rule 12 (e)]
+    '*'       reduce using rule 7 (e)
+    '*'       [reduce using rule 12 (e)]
+    '/'       reduce using rule 7 (e)
+    '/'       [reduce using rule 12 (e)]
+    '\n'      reduce using rule 7 (e)
+    '\n'      [reduce using rule 12 (e)]
+    '('       [reduce using rule 7 (e)]
+    '('       [reduce using rule 12 (e)]
+    ')'       reduce using rule 7 (e)
+    ')'       [reduce using rule 12 (e)]
+    $default  reduce using rule 7 (e)
+
+    e  go to state 14
+
+
+State 30
+
+    4 e: e . e
+    5  | e . e '^' e
+    5  | e e '^' e .
+    6  | e . e '*' e
+    7  | e . e '/' e
+    8  | e . e '+' e
+    9  | e . e '-' e
+   10  | e . '^' e
+   10  | e '^' e .
+   11  | e . '*' e
+   12  | e . '/' e
+   13  | e . '+' e
+   14  | e . '-' e
+
+    NUMBER  shift, and go to state 3
+    '^'     shift, and go to state 12
+    '('     shift, and go to state 5
+
+    NUMBER    [reduce using rule 5 (e)]
+    NUMBER    [reduce using rule 10 (e)]
+    '+'       reduce using rule 5 (e)
+    '+'       [reduce using rule 10 (e)]
+    '-'       reduce using rule 5 (e)
+    '-'       [reduce using rule 10 (e)]
+    '*'       reduce using rule 5 (e)
+    '*'       [reduce using rule 10 (e)]
+    '/'       reduce using rule 5 (e)
+    '/'       [reduce using rule 10 (e)]
+    '\n'      reduce using rule 5 (e)
+    '\n'      [reduce using rule 10 (e)]
+    '('       [reduce using rule 5 (e)]
+    '('       [reduce using rule 10 (e)]
+    ')'       reduce using rule 5 (e)
+    ')'       [reduce using rule 10 (e)]
+    $default  reduce using rule 5 (e)
+
+    e  go to state 14

@@ -1,0 +1,10 @@
+Tag=rock Frequency=89537
+Tag=pop Frequency=60792
+Tag=alternative Frequency=49716
+Tag=indie Frequency=42173
+Tag=electronic Frequency=39794
+Tag=female vocalists Frequency=37223
+Tag=favorites Frequency=35613
+Tag=Love Frequency=30912
+Tag=dance Frequency=29109
+Tag=00s Frequency=27793
